@@ -79,16 +79,15 @@ main > p, main > ul { max-width: 860px; }
     "col top1 top2"
     "col head info";
 }
-.std img { display: block; width: 100%; object-fit: cover; min-height: 0; }
-/* Left photo column fills whatever height the other two columns need */
-.std-col {
-  grid-area: col; contain: size; min-height: 0;
-  display: grid; gap: 10px;
-  grid-template-rows: minmax(0, 1.55fr) minmax(0, 1fr) minmax(0, 1.55fr);
-}
-.std-col img { height: 100%; }
-.std-col img:first-child { object-position: center 30%; }
-.std-top1, .std-top2 { height: auto; aspect-ratio: 2.4 / 1; }
+.std .ph { position: relative; overflow: hidden; min-height: 0; }
+.std .ph img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; max-width: none; }
+/* Left photo column: the absolute stack adds no height, so it fills the row height set by the other columns */
+.std-col { grid-area: col; position: relative; min-height: 0; }
+.std-stack { position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; flex-direction: column; gap: 10px; }
+.std-stack .ph { flex: 1.55 1 0; }
+.std-stack .ph:nth-child(2) { flex: 1 1 0; }
+.std-stack .ph:first-child img { object-position: center 30%; }
+.std-top1, .std-top2 { height: 0; padding-bottom: 41.667%; } /* 2.4:1 */
 .std-top1 { grid-area: top1; }
 .std-top2 { grid-area: top2; }
 .std-head {
@@ -119,9 +118,9 @@ main > p, main > ul { max-width: 860px; }
       "top1 top2"
       "col  col";
   }
-  .std-col { contain: none; grid-template-columns: repeat(3, 1fr); grid-template-rows: none; }
-  .std-col img { height: auto; aspect-ratio: 1 / 1; }
-  .std-top1, .std-top2 { aspect-ratio: 1.5 / 1; }
+  .std-stack { position: static; flex-direction: row; }
+  .std-stack .ph, .std-stack .ph:nth-child(2) { flex: 1 1 0; height: 0; padding-bottom: 31%; }
+  .std-top1, .std-top2 { padding-bottom: 66.667%; }
   .std-head { justify-self: start; font-size: 56px; margin-top: 4px; }
   .std-head span { display: inline; }
   .std-info { border-left: 0; padding: 0 0 12px; }
@@ -194,4 +193,4 @@ h2.fancy {
   .to-top { width: 40px; height: 40px; bottom: 16px; font-size: 22px; }
 }
 
-.std-top1 { object-position: 45% center; }
+.std-top1 img { object-position: 45% center; }
