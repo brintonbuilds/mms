@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <a class="skip" href="#main">Skip to Content</a>
@@ -52,14 +52,16 @@
   <h1>Contact Us</h1>
   <p class="alert">Required fields are marked *</p>
   <!-- TODO: point action at the client's form handler (e.g. Formspree or the existing mmsevents.ca endpoint) -->
-  <form class="box form" action="#" method="post">
+  <form class="box form" id="contact-form" action="https://formspree.io/f/xrpprqqb" method="post">
     <label for="email">Your Email *</label>
     <input id="email" type="email" name="email" required autocomplete="email">
     <label for="subject">Subject *</label>
-    <input id="subject" type="text" name="subject" required>
+    <input id="subject" type="text" name="_subject" required>
     <label for="message">Message *</label>
     <textarea id="message" name="message" rows="8" required></textarea>
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
     <button type="submit">Send Message</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
   </form>
 
 </main>
@@ -89,6 +91,23 @@
     var open = t.getAttribute('aria-expanded') === 'true';
     t.setAttribute('aria-expanded', String(!open));
     document.body.classList.toggle('nav-open', !open);
+  });
+</script>
+<script>
+  var f = document.getElementById('contact-form');
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = f.querySelector('button'), status = f.querySelector('.form-status');
+    btn.disabled = true; btn.textContent = 'Sending...'; status.textContent = ''; status.className = 'form-status';
+    fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+      .then(function (r) {
+        if (!r.ok) throw new Error();
+        f.reset(); status.textContent = 'Thank you. Your message has been sent.'; status.className = 'form-status ok';
+      })
+      .catch(function () {
+        status.textContent = 'Sorry, your message could not be sent. Please try again.'; status.className = 'form-status err';
+      })
+      .then(function () { btn.disabled = false; btn.textContent = 'Send Message'; });
   });
 </script>
 </body>
