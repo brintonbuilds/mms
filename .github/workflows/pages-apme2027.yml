@@ -1,9 +1,11 @@
-# Deploys the apme2027/ folder as the site root for the custom domain apme2027.ca.
-# Not active yet: switch Settings > Pages > Source to "GitHub Actions" and add the
-# `push` trigger below once apme2027.ca DNS points to GitHub Pages.
+# Deploys the apme2027/ folder as the site root for the custom domain apme2027.com.
+# apme2027.ca redirects to apme2027.com through Cloudflare.
 name: Deploy APME 2027 to GitHub Pages
 
 on:
+  push:
+    branches: [main]
+    paths: ['apme2027/**', '.github/workflows/pages-apme2027.yml']
   workflow_dispatch:
 
 permissions:

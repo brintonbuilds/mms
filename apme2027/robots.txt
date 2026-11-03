@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://apme2027.ca/sitemap.xml
+Sitemap: https://apme2027.com/sitemap.xml
