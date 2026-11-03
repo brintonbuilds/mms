@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prof. Athina Anastasaki | Advanced Polymers via Macromolecular Engineering Conference (APME) 2027</title>
+  <meta name="description" content="The 16th Advanced Polymers via Macromolecular Engineering Conference (APME 2027), May 10-14, 2027, Montreal, Canada.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="navbar" id="top">
+  <div class="container navbar-inner">
+    <a class="logo" href="index.html"><img src="images/mms-logo.png" alt="Home" width="27" height="29"></a>
+    <button class="menu-toggle" aria-controls="nav" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <nav id="nav" aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About APME 2027</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="agenda.html">Committees and Agenda</a></li></ul></nav>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <p class="site-title">Advanced Polymers via Macromolecular Engineering Conference (APME) 2027</p>
+
+  <p class="back"><a href="index.html#plenary">&larr; Plenary Speakers</a></p>
+  <h1>Prof. Athina Anastasaki, ETH Zurich, Switzerland</h1>
+  <div class="bio">
+    <img src="images/anastasaki.jpg" alt="Prof. Athina Anastasaki" width="300" height="377">
+    <div>
+      <h2>Athina Anastasaki</h2>
+      <p>Athina Anastasaki commenced her PhD studies under the supervision of Professor Dave Haddleton at the University of Warwick, followed by her post-doctoral studies alongside Professor Craig Hawker at the University of California, Santa Barbara. In 2019, she started her independent career at ETH Zurich as an Assistant Professor and in 2025 she was promoted to Associate Professor. Her group focuses on chemical recycling and polymer synthesis.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <ul>
+      <li><a href="bio-hu.html">Prof. Rongrong Hu</a></li>
+      <li><a href="bio-leibfarth.html">Prof. Frank Leibfarth</a></li>
+      <li><a href="bio-hoare.html">Prof. Todd Hoare</a></li>
+      <li><a href="bio-anastasaki.html">Prof. Athina Anastasaki</a></li>
+    </ul>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About APME 2027</a></li>
+      <li><a href="agenda.html">Committees and Agenda</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" aria-label="Back to Top">&#8963;</a>
+
+<script>
+  var t = document.querySelector('.menu-toggle');
+  t.addEventListener('click', function () {
+    var open = t.getAttribute('aria-expanded') === 'true';
+    t.setAttribute('aria-expanded', String(!open));
+    document.body.classList.toggle('nav-open', !open);
+  });
+</script>
+</body>
+</html>

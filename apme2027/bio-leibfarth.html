@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prof. Frank Leibfarth | Advanced Polymers via Macromolecular Engineering Conference (APME) 2027</title>
+  <meta name="description" content="The 16th Advanced Polymers via Macromolecular Engineering Conference (APME 2027), May 10-14, 2027, Montreal, Canada.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to Content</a>
+
+<header class="navbar" id="top">
+  <div class="container navbar-inner">
+    <a class="logo" href="index.html"><img src="images/mms-logo.png" alt="Home" width="27" height="29"></a>
+    <button class="menu-toggle" aria-controls="nav" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <nav id="nav" aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About APME 2027</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="agenda.html">Committees and Agenda</a></li></ul></nav>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <p class="site-title">Advanced Polymers via Macromolecular Engineering Conference (APME) 2027</p>
+
+  <p class="back"><a href="index.html#plenary">&larr; Plenary Speakers</a></p>
+  <h1>Prof. Frank Leibfarth, University of North Carolina, USA</h1>
+  <div class="bio">
+    <img src="images/leibfarth.jpg" alt="Prof. Frank Leibfarth" width="300" height="377">
+    <div>
+      <h2>Frank Leibfarth</h2>
+      <p>Frank Leibfarth is the Royce Murray term Distinguished Professor at the University of North Carolina at Chapel Hill. He attended the University of South Dakota, where he was a Goldwater Scholar and graduated summa cum laude in 2008 with degrees in Chemistry and Physics. He conducted his Ph.D. in chemistry at the University of California Santa Barbara under the direction of Professor Craig J. Hawker studying polymer functionalization. In 2013, Frank began his postdoctoral studies at MIT under Professor Timothy F. Jamison as an NSF Fellow. He began his independent career in 2016 at UNC Chapel Hill. The overarching goal of the Leibfarth to develop synthetic methods that transform readily available starting materials into functional and sustainable thermoplastics with molecular-level precision. To accomplish these goals, his group leverages polymer chemistry, organic chemistry, and continuous flow chemistry to provide solutions to challenges in sustainable plastics and water purification. The work of Professor Leibfarth’s group has been recognized by the Blavatnik Laureate Award in Chemistry, the Popular Science Brilliant Ten recognition, the Presidential Early Career Award in Science &amp; Engineering, and the Sloan Research Fellowship, among others. At UNC, Prof. Leibfarth has been recognized by the Tanner Award for Excellence in Undergraduate Teaching and as the Winter 2021 commencement speaker.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <ul>
+      <li><a href="bio-hu.html">Prof. Rongrong Hu</a></li>
+      <li><a href="bio-leibfarth.html">Prof. Frank Leibfarth</a></li>
+      <li><a href="bio-hoare.html">Prof. Todd Hoare</a></li>
+      <li><a href="bio-anastasaki.html">Prof. Athina Anastasaki</a></li>
+    </ul>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About APME 2027</a></li>
+      <li><a href="agenda.html">Committees and Agenda</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" aria-label="Back to Top">&#8963;</a>
+
+<script>
+  var t = document.querySelector('.menu-toggle');
+  t.addEventListener('click', function () {
+    var open = t.getAttribute('aria-expanded') === 'true';
+    t.setAttribute('aria-expanded', String(!open));
+    document.body.classList.toggle('nav-open', !open);
+  });
+</script>
+</body>
+</html>
